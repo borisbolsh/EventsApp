@@ -21,6 +21,7 @@ class EventListViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+
     }
     
     private func setupViews() {

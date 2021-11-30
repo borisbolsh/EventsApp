@@ -16,6 +16,8 @@
 		452791DA27567ECA00010654 /* EventListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452791D927567ECA00010654 /* EventListCoordinator.swift */; };
 		452791DC27567F6300010654 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452791DB27567F6300010654 /* EventListViewController.swift */; };
 		452791E22756861300010654 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452791E12756861300010654 /* UIColor+Extensions.swift */; };
+		456CAB142756A81500620C36 /* EventsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 456CAB122756A81500620C36 /* EventsApp.xcdatamodeld */; };
+		456CAB162756A93700620C36 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456CAB152756A93700620C36 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		452791D927567ECA00010654 /* EventListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCoordinator.swift; sourceTree = "<group>"; };
 		452791DB27567F6300010654 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		452791E12756861300010654 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		456CAB132756A81500620C36 /* EventsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsApp.xcdatamodel; sourceTree = "<group>"; };
+		456CAB152756A93700620C36 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		452791C127567AC100010654 /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
+				456CAB112756A7E000620C36 /* Managers */,
 				452791E0275685E900010654 /* Extensions */,
 				452791DF275684EB00010654 /* Resourses */,
 				452791DD27567F6700010654 /* Controllers */,
@@ -92,6 +97,7 @@
 		452791DE275684D700010654 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				452791CD27567AC200010654 /* LaunchScreen.storyboard */,
 				452791C827567AC100010654 /* Main.storyboard */,
 			);
 			path = Views;
@@ -103,7 +109,7 @@
 				452791C227567AC100010654 /* AppDelegate.swift */,
 				452791C427567AC100010654 /* SceneDelegate.swift */,
 				452791CB27567AC200010654 /* Assets.xcassets */,
-				452791CD27567AC200010654 /* LaunchScreen.storyboard */,
+				456CAB122756A81500620C36 /* EventsApp.xcdatamodeld */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -114,6 +120,14 @@
 				452791E12756861300010654 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		456CAB112756A7E000620C36 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				456CAB152756A93700620C36 /* CoreDataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,8 @@
 				452791C327567AC100010654 /* AppDelegate.swift in Sources */,
 				452791C527567AC100010654 /* SceneDelegate.swift in Sources */,
 				452791DA27567ECA00010654 /* EventListCoordinator.swift in Sources */,
+				456CAB162756A93700620C36 /* CoreDataManager.swift in Sources */,
+				456CAB142756A81500620C36 /* EventsApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +432,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		456CAB122756A81500620C36 /* EventsApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				456CAB132756A81500620C36 /* EventsApp.xcdatamodel */,
+			);
+			currentVersion = 456CAB132756A81500620C36 /* EventsApp.xcdatamodel */;
+			path = EventsApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 452791B727567AC100010654 /* Project object */;
 }
