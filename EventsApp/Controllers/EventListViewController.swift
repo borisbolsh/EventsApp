@@ -1,13 +1,8 @@
-//
-//  EventListViewController.swift
-//  EventsApp
-//
-//  Created by Boris Bolshakov on 30.11.21.
-//
-
 import UIKit
 
 class EventListViewController: UIViewController {
+    
+    var viewModel: EventListViewModel!
     
     static func instantiate() -> EventListViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
@@ -21,7 +16,6 @@ class EventListViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
-
     }
     
     private func setupViews() {
@@ -29,12 +23,12 @@ class EventListViewController: UIViewController {
         let barButtonItem = UIBarButtonItem(image: plusImage, style: .plain, target: self, action: #selector(tappedAddEventButton))
         barButtonItem.tintColor = .primary
         navigationItem.rightBarButtonItem = barButtonItem
-        navigationItem.title = "Events"
+        navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     @objc private func tappedAddEventButton() {
-        print("tapped")
+        viewModel.tapAddEvent()
     }
     
 }

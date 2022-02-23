@@ -16,8 +16,10 @@
 		452791DA27567ECA00010654 /* EventListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452791D927567ECA00010654 /* EventListCoordinator.swift */; };
 		452791DC27567F6300010654 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452791DB27567F6300010654 /* EventListViewController.swift */; };
 		452791E22756861300010654 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452791E12756861300010654 /* UIColor+Extensions.swift */; };
+		456B861227C6D25C0068104A /* AddEventCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456B861127C6D25C0068104A /* AddEventCoordinator.swift */; };
 		456CAB142756A81500620C36 /* EventsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 456CAB122756A81500620C36 /* EventsApp.xcdatamodeld */; };
 		456CAB162756A93700620C36 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456CAB152756A93700620C36 /* CoreDataManager.swift */; };
+		459E631B27573EBA0069C72A /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459E631A27573EBA0069C72A /* EventListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +34,10 @@
 		452791D927567ECA00010654 /* EventListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCoordinator.swift; sourceTree = "<group>"; };
 		452791DB27567F6300010654 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		452791E12756861300010654 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		456B861127C6D25C0068104A /* AddEventCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventCoordinator.swift; sourceTree = "<group>"; };
 		456CAB132756A81500620C36 /* EventsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsApp.xcdatamodel; sourceTree = "<group>"; };
 		456CAB152756A93700620C36 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		459E631A27573EBA0069C72A /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +70,14 @@
 		452791C127567AC100010654 /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
+				456B861027C6C8940068104A /* App */,
+				452791D827567EB100010654 /* Coordinators */,
+				452791DD27567F6700010654 /* Controllers */,
+				452791DE275684D700010654 /* Views */,
+				459E631927573EA90069C72A /* ViewModels */,
 				456CAB112756A7E000620C36 /* Managers */,
 				452791E0275685E900010654 /* Extensions */,
-				452791DF275684EB00010654 /* Resourses */,
-				452791DD27567F6700010654 /* Controllers */,
-				452791D827567EB100010654 /* Coordinators */,
-				452791DE275684D700010654 /* Views */,
-				452791D027567AC200010654 /* Info.plist */,
+				452791DF275684EB00010654 /* Resources */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -82,6 +87,7 @@
 			children = (
 				452791D627567B0A00010654 /* AppCoordinator.swift */,
 				452791D927567ECA00010654 /* EventListCoordinator.swift */,
+				456B861127C6D25C0068104A /* AddEventCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -103,15 +109,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		452791DF275684EB00010654 /* Resourses */ = {
+		452791DF275684EB00010654 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				452791C227567AC100010654 /* AppDelegate.swift */,
-				452791C427567AC100010654 /* SceneDelegate.swift */,
 				452791CB27567AC200010654 /* Assets.xcassets */,
 				456CAB122756A81500620C36 /* EventsApp.xcdatamodeld */,
+				452791D027567AC200010654 /* Info.plist */,
 			);
-			path = Resourses;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		452791E0275685E900010654 /* Extensions */ = {
@@ -122,12 +127,29 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		456B861027C6C8940068104A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				452791C227567AC100010654 /* AppDelegate.swift */,
+				452791C427567AC100010654 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		456CAB112756A7E000620C36 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				456CAB152756A93700620C36 /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		459E631927573EA90069C72A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				459E631A27573EBA0069C72A /* EventListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +228,9 @@
 				452791DC27567F6300010654 /* EventListViewController.swift in Sources */,
 				452791C327567AC100010654 /* AppDelegate.swift in Sources */,
 				452791C527567AC100010654 /* SceneDelegate.swift in Sources */,
+				456B861227C6D25C0068104A /* AddEventCoordinator.swift in Sources */,
 				452791DA27567ECA00010654 /* EventListCoordinator.swift in Sources */,
+				459E631B27573EBA0069C72A /* EventListViewModel.swift in Sources */,
 				456CAB162756A93700620C36 /* CoreDataManager.swift in Sources */,
 				456CAB142756A81500620C36 /* EventsApp.xcdatamodeld in Sources */,
 			);
@@ -359,7 +383,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88GGD7677D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EventsApp/Info.plist;
+				INFOPLIST_FILE = EventsApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -389,7 +413,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88GGD7677D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EventsApp/Info.plist;
+				INFOPLIST_FILE = EventsApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

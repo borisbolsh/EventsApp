@@ -1,10 +1,3 @@
-//
-//  AppCoordinator.swift
-//  EventsApp
-//
-//  Created by Boris Bolshakov on 30.11.21.
-//
-
 import UIKit
 
 protocol Coordinator {
