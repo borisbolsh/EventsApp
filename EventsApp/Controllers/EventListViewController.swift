@@ -1,7 +1,6 @@
 import UIKit
 
 class EventListViewController: UIViewController {
-    
     var viewModel: EventListViewModel!
     
     static func instantiate() -> EventListViewController {
@@ -30,5 +29,4 @@ class EventListViewController: UIViewController {
     @objc private func tappedAddEventButton() {
         viewModel.tapAddEvent()
     }
-    
 }

@@ -1,7 +1,6 @@
 import UIKit
 
 final class AddEventViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel: AddEventViewModel!
@@ -33,9 +32,6 @@ final class AddEventViewController: UIViewController {
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
-//        navigationController?.navigationBar.tintColor = .black
-
-        // Workaround to force prefersLargeTitles
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.setContentOffset(.init(x: 0, y: -1), animated: false)
     }
@@ -62,7 +58,6 @@ extension AddEventViewController: UITableViewDataSource {
 extension AddEventViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        viewModel.didSelectRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }

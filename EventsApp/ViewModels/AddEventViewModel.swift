@@ -1,7 +1,6 @@
 import Foundation
 
 final class AddEventViewModel {
-    
     let title = "Add"
     var onUpdate: () -> Void = {}
     
@@ -44,6 +43,5 @@ final class AddEventViewModel {
             titleSubtitleCellViewModel.update(subtitle)
         }
     }
-    
 }
 

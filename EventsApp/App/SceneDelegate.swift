@@ -1,7 +1,6 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
     var window: UIWindow?
     var appCoordinator: AppCoordinator?
     
@@ -14,8 +13,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
     }
-    
-    
-    
 }
 
