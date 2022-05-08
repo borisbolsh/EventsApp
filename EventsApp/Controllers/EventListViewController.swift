@@ -1,6 +1,6 @@
 import UIKit
 
-class EventListViewController: UIViewController {
+final class EventListViewController: UIViewController {
     var viewModel: EventListViewModel!
     
     static func instantiate() -> EventListViewController {

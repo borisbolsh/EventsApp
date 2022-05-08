@@ -26,12 +26,19 @@ final class AddEventViewController: UIViewController {
     private func setupViews() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(TitleSubtitleCell.self, forCellReuseIdentifier: "TitleSubtitleCell")
+        tableView.register(
+            TitleSubtitleCell.self,
+            forCellReuseIdentifier: "TitleSubtitleCell"
+        )
         tableView.tableFooterView = UIView()
 
         navigationItem.title = viewModel.title
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+                                                barButtonSystemItem: .done,
+                                                target: self,
+                                                action: #selector(tappedDone)
+        )
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.setContentOffset(.init(x: 0, y: -1), animated: false)
     }

@@ -7,7 +7,13 @@ final class TitleSubtitleCell: UITableViewCell {
     private let constant: CGFloat = 15
 
     private let datePickerView = UIDatePicker()
-    private let toolbar = UIToolbar(frame: .init(x: 0, y: 0, width: 100, height: 100))
+    private let toolbar = UIToolbar(frame:
+                                            .init(x: 0,
+                                                  y: 0,
+                                                  width: 100,
+                                                  height: 56
+                                                 )
+    )
     lazy var doneButton: UIBarButtonItem = {
         UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDone))
     }()
@@ -56,9 +62,8 @@ final class TitleSubtitleCell: UITableViewCell {
         toolbar.setItems([doneButton], animated: false)
         if #available(iOS 13.4, *) {
             datePickerView.preferredDatePickerStyle = .wheels
-        } else {
-            // Fallback on earlier versions
         }
+
         datePickerView.datePickerMode = .date
         photoImageView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         photoImageView.layer.cornerRadius = 10

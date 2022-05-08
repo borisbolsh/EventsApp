@@ -1,6 +1,8 @@
 import Foundation
 
 final class AddEventViewModel {
+    weak var coordinator: AddEventCoordinator?
+
     let title = "Add"
     var onUpdate: () -> Void = {}
     
@@ -9,12 +11,14 @@ final class AddEventViewModel {
     }
     
     private(set) var cells: [Cell] = []
-    weak var coordinator: AddEventCoordinator?
-    
+
     func viewDidLoad() {
         cells = [
             .titleSubtitle(TitleSubtitleCellViewModel(title: "Name", subtitle: "", placeholder: "Add a name", type: .text, onCellUpdate: { })),
-            .titleSubtitle(TitleSubtitleCellViewModel(title: "Date", subtitle: "", placeholder: "Select a date", type: .text, onCellUpdate: { [weak self] in
+            .titleSubtitle(TitleSubtitleCellViewModel(title: "Date", subtitle: "", placeholder: "Select a date", type: .date, onCellUpdate: { [weak self] in
+                self?.onUpdate()
+            })),
+            .titleSubtitle(TitleSubtitleCellViewModel(title: "Background", subtitle: "", placeholder: "Select a date", type: .image, onCellUpdate: { [weak self] in
                 self?.onUpdate()
             }))
         ]
