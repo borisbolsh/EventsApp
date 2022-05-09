@@ -5,6 +5,7 @@ final class AddEventCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     private let navigationController: UINavigationController
     private var modalNavigationController: UINavigationController?
+    private var completion: (UIImage) -> Void = { _ in }
 
     var parentCoordinator: EventListCoordinator?
 
@@ -27,6 +28,19 @@ final class AddEventCoordinator: Coordinator {
     func didFihishAddEvent() {
         parentCoordinator?.childDidFinish(self)
     }
+
+    func showImagePicker(completion: @escaping (UIImage) -> Void) {
+       guard let modalNavigationController = modalNavigationController else { return }
+       self.completion = completion
+       let imagePickerCoordinator = ImagePickerCoordinator(navigationController: modalNavigationController)
+       imagePickerCoordinator.onFinishPicking = { [weak self] image in
+           self?.completion(image)
+           self?.modalNavigationController?.dismiss(animated: true, completion: nil)
+       }
+       imagePickerCoordinator.parentCoordinator = self
+       childCoordinators.append(imagePickerCoordinator)
+       imagePickerCoordinator.start()
+   }
 
     deinit {
         print("add event coordinator off")

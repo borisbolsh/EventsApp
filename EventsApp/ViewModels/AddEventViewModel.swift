@@ -47,5 +47,15 @@ final class AddEventViewModel {
             titleSubtitleCellViewModel.update(subtitle)
         }
     }
+
+   func didSelectRow(at indexPath: IndexPath) {
+       switch cells[indexPath.row] {
+       case .titleSubtitle(let titleSubtitleCellViewModel):
+           guard titleSubtitleCellViewModel.type == .image else { return }
+           coordinator?.showImagePicker() { image in
+               titleSubtitleCellViewModel.update(image)
+           }
+       }
+   }
 }
 
