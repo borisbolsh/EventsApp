@@ -18,7 +18,7 @@ final class CoreDataManager {
         persistentContainer.viewContext
     }
 
-    private func saveEvent(name: String, date: Date, image: UIImage) {
+    func saveEvent(name: String, date: Date, image: UIImage) {
         let event = Event(context: moc)
         event.setValue(name, forKey: "name")
         let imageData = image.jpegData(compressionQuality: 1)
