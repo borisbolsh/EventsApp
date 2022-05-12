@@ -2,6 +2,7 @@ import UIKit
 
 final class EventCell: UITableViewCell {
 
+    private let timeRemainingStackView = TimeRemainingStackView()
     private let dateLabel = UILabel()
     private let eventNameLabel = UILabel()
     private let backgroundImageView = UIImageView()
@@ -23,6 +24,8 @@ final class EventCell: UITableViewCell {
         eventNameLabel.adjustsFontSizeToFitWidth = true
         dateLabel.adjustsFontSizeToFitWidth = true
 
+        timeRemainingStackView.setup()
+
         [dateLabel, eventNameLabel, backgroundImageView, verticalStackView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -41,6 +44,7 @@ final class EventCell: UITableViewCell {
         contentView.addSubview(verticalStackView)
         contentView.addSubview(eventNameLabel)
 
+        verticalStackView.addArrangedSubview(timeRemainingStackView)
         verticalStackView.addArrangedSubview(UIView())
         verticalStackView.addArrangedSubview(dateLabel)
     }
@@ -57,5 +61,18 @@ final class EventCell: UITableViewCell {
         NSLayoutConstraint.activate([
             eventNameLabel.rightAnchor.constraint(equalTo: verticalStackView.leftAnchor, constant: -8)
         ])
+    }
+
+    func update(with viewModel: EventCellViewModel) {
+        if let timeRemainingViewModel = viewModel.timeRemainingViewModel {
+            timeRemainingStackView.update(with: timeRemainingViewModel)
+        }
+
+        dateLabel.text = viewModel.dateText
+        eventNameLabel.text = viewModel.eventName
+
+        viewModel.loadImage { image in
+            self.backgroundImageView.image = image
+        }
     }
 }
